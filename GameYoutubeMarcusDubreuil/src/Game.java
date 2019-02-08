@@ -71,16 +71,16 @@ public class Game extends JFrame implements Runnable
 
 	public void update() 
 	{
-		renderer.deleteAll();
-		if (ansteigend) verschiebungWelle++;
-		else verschiebungWelle--;
-		if (verschiebungWelle > 20) ansteigend = false;
-		if (verschiebungWelle < 1) ansteigend = true;
-		
-		if (ansteigendSchiff) verschiebungSchiff++;
-		else verschiebungSchiff--;
-		if (verschiebungSchiff > 50) ansteigendSchiff = false;
-		if (verschiebungSchiff < 1) ansteigendSchiff = true;
+//		renderer.deleteAll();
+//		if (ansteigend) verschiebungWelle++;
+//		else verschiebungWelle--;
+//		if (verschiebungWelle > 20) ansteigend = false;
+//		if (verschiebungWelle < 1) ansteigend = true;
+//		
+//		if (ansteigendSchiff) verschiebungSchiff++;
+//		else verschiebungSchiff--;
+//		if (verschiebungSchiff > 50) ansteigendSchiff = false;
+//		if (verschiebungSchiff < 1) ansteigendSchiff = true;
 	}
 	
 	private BufferedImage loadImage(String path)
@@ -106,12 +106,12 @@ public class Game extends JFrame implements Runnable
 		renderer.renderBackground();
 		renderer.renderSprite(testSprite, 500, 100, 5, 5);
 		
-		renderer.renderRectangle(testRectangle, 2, 2); // Rectangle rectangle, int xZoom, int yZoom
-		
-		renderer.renderImage(pirate, 500, 350, 1, 1);
-		renderer.renderWave(dunkelblau, 30, -1 * verschiebungWelle + 10);
-		renderer.renderImage(pirateShip, 150, 275 - verschiebungSchiff/5, 1, 1);
-		renderer.renderWave(hellblau, 0, verschiebungWelle);
+//		renderer.renderRectangle(testRectangle, 2, 2); // Rectangle rectangle, int xZoom, int yZoom
+//		
+//		renderer.renderImage(pirate, 500, 350, 1, 1);
+//		renderer.renderWave(dunkelblau, 30, -1 * verschiebungWelle + 10);
+//		renderer.renderImage(pirateShip, 150, 275 - verschiebungSchiff/5, 1, 1);
+//		renderer.renderWave(hellblau, 0, verschiebungWelle);
 		renderer.render(graphics);
 
 		graphics.dispose();
