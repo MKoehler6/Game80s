@@ -8,7 +8,6 @@ public class RenderHandler
 	private BufferedImage view;
 	private int[] pixels;
 	public Rectangle camera;
-	int zaehler = 0;
 
 	public RenderHandler(int width, int height) 
 	{
@@ -60,12 +59,6 @@ public class RenderHandler
 						setPixel(renderPixels[y * renderWidth + x], x * xZoom + xZoomPos + xPos, y * yZoom + yZoomPos + yPos);
 	}
 	
-	public void deleteAll()
-	{
-		for (int pixelIndex = 0; pixelIndex < pixels.length; pixelIndex++)
-			pixels[pixelIndex] = 0;
-	}
-	
 	private void setPixel(int pixel, int x, int y)
 	{
 		if (x>= camera.x && y>= camera.y && x <= camera.x + camera.w && y <= camera.x + camera.h)
@@ -77,6 +70,17 @@ public class RenderHandler
 //				if (pixels.length > pixelIndex && pixel == Game.alpha && pixels[pixelIndex] != 0)
 //					pixels[pixelIndex] = pixels[pixelIndex] + 0x333333;					
 		}
+	}
+	
+	public Rectangle getCamera() 
+	{
+		return camera;
+	}
+
+	public void clear()
+	{
+		for(int i = 0; i < pixels.length; i++)
+			pixels[i] = 0;
 	}
 	
 }
