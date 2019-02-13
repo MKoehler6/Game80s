@@ -63,10 +63,10 @@ public class Game extends JFrame implements Runnable
 //		testSprite = sheet.getSprite(8, 1);
 		
 		//Load Tiles
-		tiles = new Tiles(new File("Tiles.txt"), sheet);
+		tiles = new Tiles(new File("C:\\Users\\micha\\git\\Game80s\\GameYoutubeMarcusDubreuil\\src\\Tiles.txt"), sheet);
 		
 		//Load Map
-		map = new Map(new File("Map.txt"), tiles);
+		map = new Map(new File("C:\\Users\\micha\\git\\Game80s\\GameYoutubeMarcusDubreuil\\src\\Map.txt"), tiles);
 		
 //		testImage = loadImage("GrassTile.png");
 		testRectangle.generateGraphics(1, weiss);
