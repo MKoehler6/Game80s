@@ -9,6 +9,7 @@ import java.lang.Thread;
 
 import javax.swing.JFrame;
 import javax.imageio.*;
+import java.io.File;
 
 public class Game extends JFrame implements Runnable
 {
