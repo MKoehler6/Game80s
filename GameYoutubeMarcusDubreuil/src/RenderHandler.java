@@ -20,22 +20,11 @@ public class RenderHandler
 
 		//Create an array for pixels
 		pixels = ((DataBufferInt) view.getRaster().getDataBuffer()).getData();
-//		for(int heightIndex = 0; heightIndex < height; heightIndex++) // bunte Linien
-//		{
-//			int randomPixel = (int)(Math.random() * 0xFFFFFF);
-//			for(int widthIndex = 0; widthIndex < width; widthIndex++) 
-//			{				
-//				pixels[heightIndex * width + widthIndex] = randomPixel;
-//			}
-//		}
 	}
 
 //	render our array of pixels to the screen
 	public void render(Graphics graphics)
 	{
-//		for(int index = 0; index < pixels.length; index++) { // erzeugen von Grizzel
-//			pixels[index] = (int)(Math.random() * 0xFFFFFF);
-//		}
 		graphics.drawImage(view, 0, 0, view.getWidth(), view.getHeight(), null);
 	}
 
@@ -71,17 +60,6 @@ public class RenderHandler
 						setPixel(renderPixels[y * renderWidth + x], x * xZoom + xZoomPos + xPos, y * yZoom + yZoomPos + yPos);
 	}
 	
-	public void renderWave(int farbe, int hoehe, int verschiebung)
-	{
-		for (int x = 0; x < view.getWidth(); x++)
-		{
-			setPixel(Game.weiss, x, view.getHeight() - 101 + (int)(10 * Math.sin((x + verschiebung)/10.0)) - hoehe);
-			setPixel(Game.weiss, x, view.getHeight() - 102 + (int)(10 * Math.sin((x + verschiebung)/10.0)) - hoehe);
-			for (int y = view.getHeight() - 100 + (int)(10 * Math.sin((x + verschiebung)/10.0)); y < view.getHeight(); y++)
-				setPixel(farbe, x, y - hoehe);
-		}
-	}
-
 	public void deleteAll()
 	{
 		for (int pixelIndex = 0; pixelIndex < pixels.length; pixelIndex++)
