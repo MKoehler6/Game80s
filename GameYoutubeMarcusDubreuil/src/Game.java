@@ -24,8 +24,8 @@ public class Game extends JFrame implements Runnable
 	private Tiles tiles;
 	private Map map;
 	
-	private int xZoom = 1;
-	private int yZoom = 1;
+	private int xZoom = 6;
+	private int yZoom = 6;
 
 	public static int dunkelblau = 0x3366ff;
 	public static int himmelblau = 0x33bbff;
