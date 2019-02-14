@@ -13,9 +13,7 @@ public class RenderHandler
 	{
 		//Create a BufferedImage that will represent our view.
 		view = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-		camera = new Rectangle(0, 0, width, height);
-		camera.x = 0;
-		camera.y = 0;
+		camera = new Rectangle(-16, -16, width, height);
 
 		//Create an array for pixels
 		pixels = ((DataBufferInt) view.getRaster().getDataBuffer()).getData();
