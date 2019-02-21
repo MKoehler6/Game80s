@@ -15,3 +15,7 @@
 /pirate_klein.png
 /Map.class
 /Map$MappedTile.class
+/GameObject.class
+/Player.class
+/KeyboardListener.class
+/KeyBoardListener.class

@@ -24,8 +24,12 @@ public class Game extends JFrame implements Runnable
 	private Tiles tiles;
 	private Map map;
 	
-	private int xZoom = 6;
-	private int yZoom = 6;
+	private GameObject[] objects;
+	private KeyBoardListener keyListener = new KeyBoardListener(this);
+	private Player player;
+	
+	private int xZoom = 3;
+	private int yZoom = 3;
 
 	public static int dunkelblau = 0x3366ff;
 	public static int himmelblau = 0x33bbff;
@@ -70,12 +74,21 @@ public class Game extends JFrame implements Runnable
 		
 //		testImage = loadImage("GrassTile.png");
 		testRectangle.generateGraphics(1, weiss);
-
+		
+		objects = new GameObject[1];
+		player = new Player();
+		objects[0] = player;
+		
+		canvas.addKeyListener(keyListener);
+		canvas.addFocusListener(keyListener);
 	}
 
 	public void update() 
 	{
-		
+		for(int i = 0; i < objects.length;i++)
+		{
+			objects[i].update(this);
+		}
 	}
 	
 	private BufferedImage loadImage(String path)
@@ -99,6 +112,11 @@ public class Game extends JFrame implements Runnable
 		super.paint(graphics);
 		
 		map.render(renderer, xZoom, yZoom);
+		
+		for(int i = 0; i < objects.length;i++)
+		{
+			objects[i].render(renderer, xZoom, yZoom);
+		}
 		
 //		renderer.renderBackground();
 //		renderer.renderSprite(testSprite, 500, 100, 5, 5);
@@ -141,6 +159,21 @@ public class Game extends JFrame implements Runnable
 		Game game = new Game();
 		Thread gameThread = new Thread(game);
 		gameThread.start();
+	}
+	
+	public KeyBoardListener getKeyListener() 
+	{
+		return keyListener;
+	}
+
+//	public MouseEventListener getMouseListener() 
+//	{
+//		return mouseListener;
+//	}
+
+	public RenderHandler getRenderer()
+	{
+		return renderer;
 	}
 
 }
